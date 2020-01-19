@@ -1,0 +1,11 @@
+language: generic
+# tell Travis we need sudo permissions for execution
+sudo: require
+services:
+    - docker # copy of docker to use
+
+before_install:
+    - docker build -t roaslin/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true roaslin/docker-react npm run test
