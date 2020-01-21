@@ -10,17 +10,17 @@ before_install:
 script:
     - docker run -e CI=true roaslin/docker-react npm run test
 
-deploy:
-    edge: true
-    provider: elasticbeanstalk
-    region: "eu-north-1"
-    app: "docker-react"
-    env: "DockerReact-env"
-    bucket-name: "elasticbeanstalk-eu-north-1-300563897675"
-    bucker-path: "docker-react"
-    on:
-        branch: master
+# deploy:
+#     edge: true
+#     provider: elasticbeanstalk
+#     region: "eu-north-1"
+#     app: "docker-react"
+#     env: "DockerReact-env"
+#     bucket-name: "elasticbeanstalk-eu-north-1-300563897675"
+#     bucker-path: "docker-react"
+#     on:
+#         branch: master
 
-access_key_id: $AWS_ACCESS_KEY_ID
-secret_access_key:
-    secure: "$AWS_SECRET_ACCESS_KEY"
+# access_key_id: $AWS_ACCESS_KEY_ID
+# secret_access_key:
+#     secure: "$AWS_SECRET_ACCESS_KEY"
